@@ -43,7 +43,7 @@
 *Рисунок 1 - Элементы данных шаблона Custom-CPU-RAM в разделе Latest Data*
 
 ![Custom Template Items](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie1.png)
-*Рисунок 2 - Таблица с название шаблона и привязкой*
+*Рисунок 2 - Таблица с названием шаблона и привязкой*
 ---
 
 ## 🖥️ Задание 2: Добавление хостов
@@ -66,7 +66,7 @@
 ### 📸 Скриншот хостов
 
 ![Hosts Configuration]([https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-hosts.png](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie3.png))
-*Рисунок 2 - Раздел Configuration > Hosts с добавленными агентами `sychkp-1` и `sychkp-2`*
+*Рисунок 3 - Раздел Configuration > Hosts с добавленными агентами `sychkp-1` и `sychkp-2`*
 
 ---
 
