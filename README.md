@@ -34,7 +34,7 @@
 
 | № | Имя элемента | Key | Тип данных | Единицы |
 |---|-------------|-----|------------|---------|
-| 1 | CPU Usage Total % | `system.cpu.util` | Numeric (float) | % |
+| 1 | CPU Usage Total % | `system.cpu.util[0,user,avg5]` | Numeric (float) | % |
 | 2 | RAM Usage % | `vm.memory.size[pused]` | Numeric (float) | % |
 
 ### 📸 Скриншот шаблона
