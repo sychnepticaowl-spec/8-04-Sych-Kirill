@@ -102,7 +102,7 @@
 
 ### 📸 Скриншот дашборда
 
-![Custom Dashboard]([https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-dashboard.png](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie4.png))
+![Custom Dashboard](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie4.png)
 *Рисунок 6 - Кастомный дашборд с графиками CPU и RAM для хостов `sychkp-1` и `sychkp-2`*
 
 
