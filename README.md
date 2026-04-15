@@ -26,7 +26,7 @@
 
 ### ✅ Выполненные действия
 
-1. В веб-интерфейсе Zabbix Server создан новый шаблон `Custom-CPU-RAM`
+1. В веб-интерфейсе Zabbix Server создан новый шаблон `Zadanie 1`
 2. Создан Item для мониторинга загрузки CPU в процентах
 3. Создан Item для мониторинга загрузки RAM в процентах
 
@@ -40,7 +40,7 @@
 ### 📸 Скриншот шаблона
 
 ![Custom Template Items](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-cpu.png)
-*Рисунок 1 - Элементы данных шаблона Custom-CPU-RAM в разделе Latest Data*
+*Рисунок 1 - Элементы данных шаблона `Zadanie 1` в разделе Latest Data*
 
 ![Custom Template Items](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie1.png)
 *Рисунок 2 - Таблица с названием шаблона и привязкой*
