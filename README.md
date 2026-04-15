@@ -43,7 +43,7 @@
 *Рисунок 1 - Элементы данных шаблона Custom-CPU-RAM в разделе Latest Data*
 
 ![Custom Template Items](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie1.png)
-*Рисунок 2 Таблица с название шаблона и привязкой*
+*Рисунок 2 - Таблица с название шаблона и привязкой*
 ---
 
 ## 🖥️ Задание 2: Добавление хостов
@@ -83,12 +83,12 @@
 **📊 CPU Usage:**
 
 ![Latest Data - CPU](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-cpu.png)
-*Рисунок 3 - Данные о загрузке CPU в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
+*Рисунок 4 - Данные о загрузке CPU в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
 
 **💾 RAM Usage:**
 
 ![Latest Data - RAM](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-ram.png)
-*Рисунок 4 - Данные о загрузке RAM в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
+*Рисунок 5 - Данные о загрузке RAM в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
 
 ---
 
@@ -103,6 +103,6 @@
 ### 📸 Скриншот дашборда
 
 ![Custom Dashboard]([https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-dashboard.png](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie4.png))
-*Рисунок 5 - Кастомный дашборд с графиками CPU и RAM для хостов `sychkp-1` и `sychkp-2`*
+*Рисунок 6 - Кастомный дашборд с графиками CPU и RAM для хостов `sychkp-1` и `sychkp-2`*
 
 
