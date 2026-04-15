@@ -1,54 +1,124 @@
-# Домашнее задание: Система мониторинга Zabbix hw-02
+
+# 📊 Домашнее задание 8.04: Система мониторинга Zabbix
+
+<div align="center">
 
 **Выполнил:** Сыч Кирилл  
+**Группа:** HV-02  
 **Дата:** 14 апреля 2026
+
+[![Zabbix](https://img.shields.io/badge/Zabbix-7.4-green)](https://www.zabbix.com/)
+
+</div>
 
 ---
 
-## Задание 1: Установка Zabbix Server
+## 📋 Содержание
 
-### ✅ Установлено и настроено
+- [Задание 1: Создание шаблона](#задание-1-создание-шаблона)
+- [Задание 2: Добавление хостов](#задание-2-добавление-хостов)
+- [Задание 3: Привязка шаблонов](#задание-3-привязка-шаблонов)
+- [Задание 4: Кастомный дашборд](#задание-4-кастомный-дашборд)
 
-- Zabbix Server 7.4 на Debian 13
-- PostgreSQL (база данных)
-- Apache + PHP 8.4 (веб-интерфейс)
-- IP адрес сервера: `10.0.3.4`
+---
 
-### 📋 Команды установки
+## 🎯 Задание 1: Создание шаблона
 
-```bash
-# Установка репозитория Zabbix 7.4
-wget https://repo.zabbix.com/zabbix/7.4/release/debian/pool/main/z/zabbix-release/zabbix-release_latest_7.4+debian13_all.deb
-sudo dpkg -i zabbix-release_latest_7.4+debian13_all.deb
-sudo apt update
+### ✅ Выполненные действия
 
-# Установка Zabbix Server
-sudo apt i…R zabbix WITH PASSWORD 'zabbix';
-CREATE DATABASE zabbix WITH OWNER zabbix ENCODING 'UTF8' LC_COLLATE='en_US.UTF-8' LC_CTYPE='en_US.UTF-8' TEMPLATE=template0;
-EOF
+1. В веб-интерфейсе Zabbix Server создан новый шаблон `Custom-CPU-RAM`
+2. Создан Item для мониторинга загрузки CPU в процентах
+3. Создан Item для мониторинга загрузки RAM в процентах
 
-# Импорт схемы
-zcat /usr/share/zabbix/sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+### 📊 Элементы данных шаблона
 
-# Настройка пароля
-sudo sed -i 's/^# DBPassword=/DBPassword=zabbix/' /etc/zabbix/zabbix_server.conf
+| № | Имя элемента | Key | Тип данных | Единицы |
+|---|-------------|-----|------------|---------|
+| 1 | CPU Usage Total % | `system.cpu.util` | Numeric (float) | % |
+| 2 | RAM Usage % | `vm.memory.size[pused]` | Numeric (float) | % |
 
-# Запуск служб
-sudo systemctl restart zabbix-server zabbix-agent2 apache2
-sudo systemctl enable zabbix-server zabbix-agent2 apache2
-```
+### 📸 Скриншот шаблона
 
+![Custom Template Items](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-cpu.png)
+*Рисунок 1 - Элементы данных шаблона Custom-CPU-RAM в разделе Latest Data*
 
-## Задание 2: Установка Zabbix Agent
+---
 
-### 📸 Конфигурация хостов
+## 🖥️ Задание 2: Добавление хостов
 
-![Hosts](https://github.com/sychnepticaowl-spec/hv-02-Sych-Kirill/blob/main/screenshots/hosts-config.png?raw=true)
+### ✅ Выполненные действия
 
-### 📸 Лог агента
+1. Установлен Zabbix Agent 2 на две виртуальные машины (Ubuntu 24.04)
+2. Добавлен Zabbix Server (10.0.3.4) в список разрешенных серверов
+3. Хосты добавлены в раздел Configuration > Hosts
+4. К каждому хосту прикреплен шаблон `Linux by Zabbix Agent`
+5. Проверено поступление данных в разделе Latest Data
 
-![Agent Log](https://github.com/sychnepticaowl-spec/hv-02-Sych-Kirill/blob/main/screenshots/agent-log.png?raw=true)
+### 📋 Информация о хостах
 
-### 📸 Последние данные
+| Хост | IP адрес | Имя в Zabbix | ОС |
+|------|----------|--------------|-----|
+| **Host 1** | 10.0.3.5 | `sychkp-1` | Ubuntu 24.04.3 LTS |
+| **Host 2** | 10.0.3.6 | `sychkp-2` | Ubuntu 24.04.3 LTS |
 
-![Latest Data](https://github.com/sychnepticaowl-spec/hv-02-Sych-Kirill/blob/main/screenshots/latest-data.png?raw=true)
+### 📸 Скриншот хостов
+
+![Hosts Configuration](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-hosts.png)
+*Рисунок 2 - Раздел Configuration > Hosts с добавленными агентами `sychkp-1` и `sychkp-2`*
+
+---
+
+## 🔗 Задание 3: Привязка шаблонов
+
+### ✅ Выполненные действия
+
+1. К каждому хосту (`sychkp-1` и `sychkp-2`) привязан созданный шаблон `Custom-CPU-RAM`
+2. К каждому хосту также привязан стандартный шаблон `Linux by Zabbix Agent`
+3. Проверено поступление данных в раздел Latest Data
+
+### 📸 Скриншоты данных
+
+**📊 CPU Usage:**
+
+![Latest Data - CPU](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-cpu.png)
+*Рисунок 3 - Данные о загрузке CPU в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
+
+**💾 RAM Usage:**
+
+![Latest Data - RAM](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-latest-data-ram.png)
+*Рисунок 4 - Данные о загрузке RAM в разделе Latest Data для хостов `sychkp-1` и `sychkp-2`*
+
+---
+
+## 📈 Задание 4: Кастомный дашборд
+
+### ✅ Выполненные действия
+
+1. В разделе Dashboards создан новый дашборд `My Custom Dashboard`
+2. Размещены графики мониторинга CPU и RAM для обоих хостов
+3. Настроено отображение данных за последний час
+
+### 📸 Скриншот дашборда
+
+![Custom Dashboard](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-dashboard.png)
+*Рисунок 5 - Кастомный дашборд с графиками CPU и RAM для хостов `sychkp-1` и `sychkp-2`*
+
+---
+
+## ✅ Чек-лист выполнения
+
+- [x] **Задание 1:** Создан шаблон с элементами CPU и RAM
+- [x] **Задание 2:** Установлены агенты на 2 хоста с именами `sychkp-1` и `sychkp-2`
+- [x] **Задание 3:** Привязаны шаблоны к обоим хостам, данные поступают в Latest Data
+- [x] **Задание 4:** Создан кастомный дашборд с графиками
+- [x] Сделаны все необходимые скриншоты
+
+---
+
+<div align="center">
+
+**Задание выполнено полностью!** ✅
+
+Made with ❤️ by Сыч Кирилл
+
+</div>
