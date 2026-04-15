@@ -65,7 +65,7 @@
 
 ### 📸 Скриншот хостов
 
-![Hosts Configuration]([https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/raw/main/screenshots/screenshots-hosts.png](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie3.png))
+![Hosts Configuration](https://github.com/sychnepticaowl-spec/8-04-Sych-Kirill/blob/main/screenshots/zadanie3.png)
 *Рисунок 3 - Раздел Configuration > Hosts с добавленными агентами `sychkp-1` и `sychkp-2`*
 
 ---
